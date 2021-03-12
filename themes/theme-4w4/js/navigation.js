@@ -41,7 +41,7 @@
 			button.setAttribute( 'aria-expanded', 'true' );
 		}
 	} );
-	
+
 	// Remove the .toggled class and set aria-expanded to false when the user clicks outside the navigation.
 	document.addEventListener( 'click', function( event ) {
 		const isClickInside = siteNavigation.contains( event.target );
@@ -67,12 +67,13 @@
 	// Toggle focus each time a menu link with children receive a touch event.
 	for ( const link of linksWithChildren ) {
 		link.addEventListener( 'touchstart', toggleFocus, false );
+	
 	}
 
 	/**
 	 * Sets or removes .focus class on an element.
 	 */
-	function toggleFocus() {
+	function toggleFocus(event) {
 		if ( event.type === 'focus' || event.type === 'blur' ) {
 			let self = this;
 			// Move up through the ancestors of the current link until we hit .nav-menu.
@@ -85,7 +86,7 @@
 			}
 		}
 
-		if ( event.type === 'touchstart' ) {
+		if ( event.type === 'touchstart') {
 			const menuItem = this.parentNode;
 			event.preventDefault();
 			for ( const link of menuItem.parentNode.children ) {

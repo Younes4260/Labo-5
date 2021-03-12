@@ -667,9 +667,7 @@ textarea {
 .no-sidebar .site {
   display: grid;
   grid-template-columns: auto;
-  grid-template-areas: "header"
- "main"
- "footer";
+  grid-template-areas: "header" "main" "footer";
 }
 
 /* 
@@ -694,23 +692,22 @@ textarea {
 --------------------------------------------- */
 .main-navigation {
   display: block;
-  width: 100%;
+  width: 100vw;
 }
 
 .main-navigation ul {
   display: none;
+  position: absolute;
+  width: 100%;
   list-style: none;
   margin: 0;
   padding-left: 0;
-  background-color: #005;
-  border-radius: 50px;
-  position: absolute;
-  width: 100%;
-  box-shadow: inset 0px 0px 7px 0px rgba(0, 0, 0, 0.75);
+  background-color: #000;
 }
 
 .main-navigation ul ul {
   box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+  float: left;
   position: absolute;
   top: 100%;
   left: -999em;
@@ -734,32 +731,31 @@ textarea {
 
 .main-navigation ul li:hover > ul,
 .main-navigation ul li.focus > ul {
-  left: auto;
+  left: 0;
 }
 
 .main-navigation li {
   position: relative;
+  flex: 1;
 }
 
 .main-navigation a {
   display: block;
   text-decoration: none;
+  padding: .5rem;
 }
 
-/* ----------------------------------------
-Bouton burger
--------------------------------------------*/
+/* -----------------------------------------------------------------------------
+Bouton burger 
+------------------------------------------------------------------------------*/
 .menu-toggle {
-  padding: 0rem;
+  padding: 0;
   border: 0;
-  margin-left: 3rem;
-  transform: rotate(0);
-  transition: transform .20s;
 }
 
 .menu-toggle:hover,
 .menu-toggle:focus {
-  background: #d6dadf;
+  background: #fafbfc;
 }
 
 .menu-toggle:focus {
@@ -771,29 +767,19 @@ Bouton burger
   transform: scale(0.99);
 }
 
-.main-navigation.toggled .menu-toggle {
-  transform: rotate(90deg);
+/*
+.main-navigation.toggled .menu-toggle{
+	transform : rotate(90deg);
 }
-
-/* Small menu. */
+*/
 .menu-toggle,
 .main-navigation.toggled ul {
   display: block;
-  border-radius: 50px;
 }
 
-.menu-toggle li,
-.main-navigation.toggled ul li {
-  padding: 0.5rem 0;
-}
-
-.main-navigation.toggled {
-  margin-bottom: 20rem;
-}
-
-/* ---------------------------------------------
+/* ---------------------------------------------------------------------------
 menu tablet
------------------------------------------------*/
+------------------------------------------------------------------------------ */
 @media screen and (min-width: 37.5em) {
   .menu-toggle {
     display: none;
@@ -801,10 +787,8 @@ menu tablet
   .main-navigation.toggled ul,
   .main-navigation ul {
     display: flex;
-    justify-content: space-around;
-    height: 2rem;
     position: static;
-    align-items: center;
+    justify-content: space-around;
   }
 }
 
