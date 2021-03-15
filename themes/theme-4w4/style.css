@@ -1178,3 +1178,27 @@ body.home .site-title {
   margin-left: 0;
   text-decoration: none;
 }
+
+.home .cours {
+  display: flex;
+  flex-direction: column;
+}
+
+article {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #aaa;
+}
+
+article p {
+  margin: .3rem;
+  font-size: 1rem;
+}
+
+article a {
+  font-size: 2rem;
+  font-weight: bold;
+  text-decoration: none;
+}

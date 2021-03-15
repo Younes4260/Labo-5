@@ -185,13 +185,15 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
+
+/* adaptation de la requete */
 function extraire_cours_front_page($query){
 	if( !is_admin() && $query->is_front_page() && $query->is_main_query() ){
 
 	$query->set( 'category_name', 'cours' );
 	$query->set('posts_per_page', -1 );
-	$query->set('orderby', 'title');
-	$query->set('order', 'asc');
+	$query->set('meta_keys', 'type_de_cours');
+	$query->set('orderby', array('meta_value' => 'DESC', 'title' => 'ASC'));
 }
 }
 add_action('pre_get_posts','extraire_cours_front_page');
