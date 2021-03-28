@@ -1,0 +1,96 @@
+// Code affectant le carrousel
+
+header {
+    width: 100vw;
+}
+body {
+    overflow-x: hidden;
+}
+// Ce code affecte les boutons liés au carrousel
+input {
+    width: 30px;
+    height: 30px;
+    margin: 0 2em;
+    margin-bottom: 10px;
+}
+
+#lesboutons {
+    display: flex;
+    justify-content: center;
+    margin-left: -60px;
+}
+// Fin du code lié aux boutons
+
+.carrousel {
+    display: flex;
+    width: 300vw;
+    height: 15vh;
+    transition: transform 0.5s ease;
+    overflow-x: hidden;
+    transform: translateX(-3rem);
+    // Code affectant les divs en tant que telles
+    .slide__conteneur {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2rem;
+        border: none;
+        margin: 0;
+        padding: 0;
+        transition: none;
+        box-shadow: none;
+        height: 100px;
+        .slide {
+            width: 60%;
+            padding: 0;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            @include mobile {
+                & {
+                    width: 60%;
+                }
+            }
+            img {
+                display: block;
+                margin: 2%;
+            }
+            .slide__info {
+                display: flex;
+                flex-direction: column;
+                p{
+                    font-size: .8rem;
+                }
+                a{
+                    font-size: 1.2rem;
+                }
+            }
+        }
+        // Format mobile
+        @include mobile {
+            font-size: 1rem;
+            padding: 0 2em;
+        }
+
+        // Code affectant les divs de manière spécifique    
+        &:nth-of-type(1){
+            background-color: rgba(104, 20, 94, 1);
+            width: 60vw;
+            height: 100px;
+        }
+        &:nth-of-type(2){
+            background-color: rgba(157, 39, 168, 1);
+            width: 60vw;
+            height: 100px;
+        }
+        &:nth-of-type(3){
+            background-color: rgba(199, 61, 217, 1);
+            width: 60vw;
+            height: 100px;
+        }
+    } // fin du div
+
+}
+
+

@@ -11,9 +11,36 @@ get_header();
 ?>
 	<main id="primary" class="site-main">
 	<section class="carrousel">
-		<div>1</div>
-		<div>2</div>
-		<div>3</div>
+		<article class="slide__conteneur">
+			<div class="slide">
+				<img src="" alt="">
+				<div class="slide__info">
+				<p>582-6N2 - 20h</p>
+				<a href="">Création de merde à changer</a>
+				<p>Session : 6</p>
+				</div>
+			</div>
+		</article>
+		<article class="slide__conteneur">
+			<div class="slide">
+				<img src="" alt="">
+				<div class="slide__info">
+				<p>582-6N2 - 20h</p>
+				<a href="">Création de merde à changer</a>
+				<p>Session : 6</p>
+				</div>
+			</div>
+		</article>
+		<article class="slide__conteneur">
+			<div class="slide">
+				<img src="" alt="">
+				<div class="slide__info">
+				<p>582-6N2 - 20h</p>
+				<a href="">Création de merde à changer</a>
+				<p>Session : 6</p>
+				</div>
+			</div>
+		</article>
 	</section>
 	<button id='un'>1</button>
 	<button id='deux'>2</button>

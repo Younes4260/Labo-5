@@ -1266,6 +1266,68 @@ section article:hover {
 
 /* Carrousel
 --------------------------------------------- */
+/*header {
+    width: 100vw;
+}
+body {
+    overflow-x: hidden;
+}
+// Ce code affecte les boutons liés au carrousel
+input {
+    width: 30px;
+    height: 30px;
+    margin: 0 2em;
+    margin-bottom: 10px;
+}
+
+#lesboutons {
+    display: flex;
+    justify-content: center;
+    margin-left: -60px;
+}
+// Fin du code lié aux boutons
+
+.carrousel {
+    display: flex;
+    width: 300vw;
+    height: 15vh;
+    margin: 0 -3rem;
+    transition: transform 0.5s ease;
+    overflow-x: hidden;
+    // Code affectant les divs en tant que telles
+    div {
+        display: flex;
+        width: 100vw;
+        align-items: center;
+        justify-content: center;
+        font-size: 2rem;
+        padding: 0 1em;
+
+        // Format mobile
+        @include mobile {
+            font-size: 1rem;
+            padding: 0 2em;
+        }
+
+        // Code affectant les divs de manière spécifique    
+        &:nth-of-type(1){
+            background-color: rgba(104, 20, 94, 0.5);
+            width: 100vw;
+            height: 100px;
+        }
+        &:nth-of-type(2){
+            background-color: rgba(157, 39, 168, 0.5);
+            width: 100vw;
+            height: 100px;
+        }
+        &:nth-of-type(3){
+            background-color: rgba(199, 61, 217, 0.5);
+            width: 100vw;
+            height: 100px;
+        }
+    } // fin du div
+
+} */
 header {
   width: 100vw;
 }
@@ -1291,42 +1353,79 @@ input {
   display: flex;
   width: 300vw;
   height: 15vh;
-  margin: 0 -3rem;
   transition: transform 0.5s ease;
   overflow-x: hidden;
+  transform: translateX(-3rem);
 }
 
-.carrousel div {
+.carrousel .slide__conteneur {
   display: flex;
-  width: 100vw;
   align-items: center;
   justify-content: center;
   font-size: 2rem;
-  padding: 0 1em;
+  border: none;
+  margin: 0;
+  padding: 0;
+  transition: none;
+  box-shadow: none;
+  height: 100px;
+}
+
+.carrousel .slide__conteneur .slide {
+  width: 60%;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }
 
 @media (max-width: 600px) {
-  .carrousel div {
+  .carrousel .slide__conteneur .slide {
+    width: 60%;
+  }
+}
+
+.carrousel .slide__conteneur .slide img {
+  display: block;
+  margin: 2%;
+}
+
+.carrousel .slide__conteneur .slide .slide__info {
+  display: flex;
+  flex-direction: column;
+}
+
+.carrousel .slide__conteneur .slide .slide__info p {
+  font-size: .8rem;
+}
+
+.carrousel .slide__conteneur .slide .slide__info a {
+  font-size: 1.2rem;
+}
+
+@media (max-width: 600px) {
+  .carrousel .slide__conteneur {
     font-size: 1rem;
     padding: 0 2em;
   }
 }
 
-.carrousel div:nth-of-type(1) {
-  background-color: rgba(104, 20, 94, 0.5);
-  width: 100vw;
+.carrousel .slide__conteneur:nth-of-type(1) {
+  background-color: #68145e;
+  width: 60vw;
   height: 100px;
 }
 
-.carrousel div:nth-of-type(2) {
-  background-color: rgba(157, 39, 168, 0.5);
-  width: 100vw;
+.carrousel .slide__conteneur:nth-of-type(2) {
+  background-color: #9d27a8;
+  width: 60vw;
   height: 100px;
 }
 
-.carrousel div:nth-of-type(3) {
-  background-color: rgba(199, 61, 217, 0.5);
-  width: 100vw;
+.carrousel .slide__conteneur:nth-of-type(3) {
+  background-color: #c73dd9;
+  width: 60vw;
   height: 100px;
 }
 
