@@ -9,42 +9,46 @@
 
 get_header();
 ?>
-	<main id="primary" class="site-main">
-	<section class="carrousel">
-		<article class="slide__conteneur">
-			<div class="slide">
-				<img src="" alt="">
-				<div class="slide__info">
-				<p>582-6N2 - 20h</p>
-				<a href="">Création de merde à changer</a>
-				<p>Session : 6</p>
+	<main id ="primary" class="site-main">
+	<?php $valeurrandom1 = rand(50,69);
+			$valeurrandom2 = rand(50,69);
+			$valeurrandom3 = rand(50,69);
+			?>
+		<section class="carrousel-2">
+			<article class="slide__conteneur">
+				<div class="slide">
+				<img width="150" height="150" src="http://localhost/4w4/wp-content/uploads/2021/03/poop.jpg">
+				<div class="slide__info"><a href="<?php echo get_permalink($valeurrandom1); ?>">
+				<?php echo get_the_title($valeurrandom1);
+				?></a>
 				</div>
-			</div>
-		</article>
-		<article class="slide__conteneur">
-			<div class="slide">
-				<img src="" alt="">
-				<div class="slide__info">
-				<p>582-6N2 - 20h</p>
-				<a href="">Création de merde à changer</a>
-				<p>Session : 6</p>
 				</div>
-			</div>
-		</article>
-		<article class="slide__conteneur">
-			<div class="slide">
-				<img src="" alt="">
-				<div class="slide__info">
-				<p>582-6N2 - 20h</p>
-				<a href="">Création de merde à changer</a>
-				<p>Session : 6</p>
+				</article>
+				<article class="slide__conteneur">
+				<div class="slide">
+				<img width="150" height="150" src="http://localhost/4w4/wp-content/uploads/2021/03/poop.jpg">
+				<div class="slide__info"><a href="<?php echo get_permalink($valeurrandom2); ?>">
+				<?php echo get_the_title($valeurrandom2);
+				?></a>
 				</div>
-			</div>
-		</article>
-	</section>
-	<button id='un'>1</button>
-	<button id='deux'>2</button>
-	<button id='trois'>3</button>
+				</div>
+				</article>
+				<article class="slide__conteneur">
+				<div class="slide">
+				<img width="150" height="150" src="http://localhost/4w4/wp-content/uploads/2021/03/poop.jpg">
+				<div class="slide__info"><a href="<?php echo get_permalink($valeurrandom3); ?>">
+				<?php echo get_the_title($valeurrandom3);
+				?></a>
+				</div>
+				</div>
+				</article>
+				</section>
+
+	<div id = "lesboutons">
+	<input type="radio" class="rad-carrousel" name="rad-carrousel">
+	<input type="radio" class="rad-carrousel" name="rad-carrousel">
+	<input type="radio" class="rad-carrousel" name="rad-carrousel">
+	</div>
 
 		<?php if ( have_posts() ) : ?>
 
@@ -65,12 +69,17 @@ get_header();
 
 				if ($tPropriété['typeCours'] != $precedant): 
 					if ("XXXXXX" != $precedant) : ?>
-				</section>
+					</section>
 				<?php endif ?>
 				<h2><?php echo $tPropriété['typeCours'] ?></h2>
-				<section> 
+				<section class="<?php echo ($tPropriété['typeCours']=='Web'? 'class="caroussel-2"' :''); ?>">
 				<?php endif ?>
-				<?php get_template_part( 'template-parts/content', 'cours-article' ); 
+
+				<?php if ($tPropriété['typeCours'] == "Web") :
+					get_template_part( 'template-parts/content', 'cours-caroussel' ); 
+				else : get_template_part( 'template-parts/content', 'cours-article' ); 
+					get_template_part( 'template-parts/content', 'cours-article' ); 
+				endif;	
 			    $precedant = $tPropriété['typeCours'];
 			endwhile; ?>
 			<article>
@@ -79,10 +88,7 @@ get_header();
 				<p>Session : <?php echo $tPropriété['session']; ?></p>
 			</article>
 			</section> <!-- fin section #cours -->
-			<?php rewind_posts(); ?>
-			<?php while ( have_posts() ) : the_post(); ?>
-			<h3>-<?php echo get_the_title(); ?></h3>
-			<?php endwhile; ?>
+			
 
 		<?php endif; ?>
 

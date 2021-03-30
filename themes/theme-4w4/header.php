@@ -47,29 +47,9 @@
 		<!-- Debut carrousel -->
 		<?php if ( is_front_page()) :
 				?>
-		<section class="carrousel">
-			<?php $valeurrandom1 = rand(50,69);
-			$valeurrandom2 = rand(50,69);
-			$valeurrandom3 = rand(50,69);
-			?>
-				<div><a href="<?php echo get_permalink($valeurrandom1); ?>">
-				<?php echo get_the_title($valeurrandom1);
-				?></a></div>
-				<div><a href="<?php echo get_permalink($valeurrandom2); ?>"><?php 
-				echo get_the_title($valeurrandom2);
-				?></a></div>
-				<div><a href="<?php echo get_permalink($valeurrandom3); ?>"><?php 
-				echo get_the_title($valeurrandom3);
-				?></a></div>
-		</section>
 		<?php
 			endif;
 		?>
-		<div id = "lesboutons">
-		<input type="radio" id="un" name="bouton">
-		<input type="radio" id="deux" name="bouton">
-		<input type="radio" id="trois" name="bouton">
-		</div>
 		<!-- fin carrousel -->
 		<nav id="site-navigation" class="main-navigation">
 			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><img src="https://s2.svgbox.net/hero-solid.svg?ic=menu&color=000000" width="32" height="32"></button>
