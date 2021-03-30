@@ -1203,6 +1203,7 @@ section {
   flex-direction: row;
   flex-wrap: wrap;
   margin-right: 100px;
+  width: 95vw;
 }
 
 section article {
@@ -1266,6 +1267,68 @@ section article:hover {
 
 /* Carrousel
 --------------------------------------------- */
+/*header {
+    width: 100vw;
+}
+body {
+    overflow-x: hidden;
+}
+// Ce code affecte les boutons liés au carrousel
+input {
+    width: 30px;
+    height: 30px;
+    margin: 0 2em;
+    margin-bottom: 10px;
+}
+
+#lesboutons {
+    display: flex;
+    justify-content: center;
+    margin-left: -60px;
+}
+// Fin du code lié aux boutons
+
+.carrousel {
+    display: flex;
+    width: 300vw;
+    height: 15vh;
+    margin: 0 -3rem;
+    transition: transform 0.5s ease;
+    overflow-x: hidden;
+    // Code affectant les divs en tant que telles
+    div {
+        display: flex;
+        width: 100vw;
+        align-items: center;
+        justify-content: center;
+        font-size: 2rem;
+        padding: 0 1em;
+
+        // Format mobile
+        @include mobile {
+            font-size: 1rem;
+            padding: 0 2em;
+        }
+
+        // Code affectant les divs de manière spécifique    
+        &:nth-of-type(1){
+            background-color: rgba(104, 20, 94, 0.5);
+            width: 100vw;
+            height: 100px;
+        }
+        &:nth-of-type(2){
+            background-color: rgba(157, 39, 168, 0.5);
+            width: 100vw;
+            height: 100px;
+        }
+        &:nth-of-type(3){
+            background-color: rgba(199, 61, 217, 0.5);
+            width: 100vw;
+            height: 100px;
+        }
+    } // fin du div
+
+} */
 header {
   width: 100vw;
 }
@@ -1284,50 +1347,126 @@ input {
 #lesboutons {
   display: flex;
   justify-content: center;
-  margin-left: -60px;
+  width: 100vw;
+  margin-left: -5rem;
 }
 
-.carrousel {
+.carrousel-2 {
   display: flex;
   width: 300vw;
   height: 15vh;
-  margin: 0 -3rem;
   transition: transform 0.5s ease;
+  margin-left: 14vw;
+  margin-top: 3vh;
   overflow-x: hidden;
 }
 
-.carrousel div {
+.carrousel-2 .slide__conteneur {
   display: flex;
-  width: 100vw;
   align-items: center;
   justify-content: center;
   font-size: 2rem;
-  padding: 0 1em;
+  border: none;
+  margin: 0;
+  padding: 0;
+  transition: none;
+  box-shadow: none;
+  height: 100px;
+  border-radius: 10px;
+  box-shadow: 3px 3px 17px 0px rgba(0, 0, 0, 0.75);
+}
+
+.carrousel-2 .slide__conteneur .slide {
+  width: 60vw;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
 
 @media (max-width: 600px) {
-  .carrousel div {
+  .carrousel-2 .slide__conteneur .slide {
+    width: 110%;
+  }
+}
+
+.carrousel-2 .slide__conteneur .slide img {
+  display: block;
+  margin: 2%;
+  width: 8rem;
+  height: 4rem;
+}
+
+@media (max-width: 600px) {
+  .carrousel-2 .slide__conteneur .slide img {
+    width: 5.5rem;
+    height: 2.5rem;
+  }
+}
+
+.carrousel-2 .slide__conteneur .slide .slide__info {
+  display: flex;
+  flex-direction: column;
+}
+
+@media (max-width: 600px) {
+  .carrousel-2 .slide__conteneur .slide .slide__info {
+    width: 200%;
+  }
+}
+
+.carrousel-2 .slide__conteneur .slide .slide__info p {
+  font-size: .8rem;
+}
+
+.carrousel-2 .slide__conteneur .slide .slide__info a {
+  font-size: 1.2rem;
+}
+
+@media (max-width: 600px) {
+  .carrousel-2 .slide__conteneur {
     font-size: 1rem;
     padding: 0 2em;
   }
 }
 
-.carrousel div:nth-of-type(1) {
-  background-color: rgba(104, 20, 94, 0.5);
-  width: 100vw;
+.carrousel-2 .slide__conteneur:nth-of-type(1) {
+  background-color: #68145e;
+  width: 60vw;
+  height: 100px;
+  margin-right: 40vw;
+}
+
+.carrousel-2 .slide__conteneur:nth-of-type(2) {
+  background-color: #c73dd9;
+  width: 60vw;
+  height: 100px;
+  margin-right: 40vw;
+}
+
+.carrousel-2 .slide__conteneur:nth-of-type(3) {
+  background-color: #dd2ac8;
+  width: 60vw;
   height: 100px;
 }
 
-.carrousel div:nth-of-type(2) {
-  background-color: rgba(157, 39, 168, 0.5);
+.ctrl-carrousel {
+  display: flex;
+  justify-content: center;
   width: 100vw;
-  height: 100px;
 }
 
-.carrousel div:nth-of-type(3) {
-  background-color: rgba(199, 61, 217, 0.5);
-  width: 100vw;
-  height: 100px;
+.ctrl-carrousel .rad-carrousel {
+  display: block;
+  margin: .5rem 2rem .5rem 2rem;
+}
+
+.slide__info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 /* Animation
